@@ -62,7 +62,7 @@ The GTA V game files are not modified.
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/about-1.0.0.png" alt="About page" width="420">
+  <img src="docs/screenshots/about-1.0.0-linux.png" alt="About page" width="420">
 </p>
 
 ## Compatibility

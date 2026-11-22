@@ -1,0 +1,9 @@
+target/
+dist/
+*.log
+*.bak
+*.orig
+*.swp
+.DS_Store
+.idea/
+.vscode/

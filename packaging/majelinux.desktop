@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=majelinux
+Comment=Native Rust launcher for Majestic RP on Linux
+Exec=majelinux
+Icon=majelinux
+Terminal=false
+Categories=Game;
+StartupWMClass=majelinux

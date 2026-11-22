@@ -51,6 +51,9 @@ The GTA V game files are not modified.
 
 <p align="center">
   <img src="docs/screenshots/general-1.0.0.png" alt="General page" width="420">
+</p>
+
+<p align="center">
   <img src="docs/screenshots/installation-1.0.0.png" alt="Installation page" width="420">
 </p>
 

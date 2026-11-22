@@ -51,6 +51,9 @@ Majelinux — небольшой нативный интерфейс для Wind
 
 <p align="center">
   <img src="docs/screenshots/general-1.0.0.png" alt="Главная страница" width="420">
+</p>
+
+<p align="center">
   <img src="docs/screenshots/installation-1.0.0.png" alt="Страница установки" width="420">
 </p>
 

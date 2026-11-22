@@ -449,8 +449,8 @@ static TABLE: &[(&str, &str, &str)] = &[
     ),
     (
         "update.err.invalid",
-        "The downloaded file is not a working majelinux build",
-        "Скачанный файл не является рабочей сборкой majelinux",
+        "The downloaded file is not a working Majelinux build",
+        "Скачанный файл не является рабочей сборкой Majelinux",
     ),
     (
         "update.err.run",
@@ -464,8 +464,8 @@ static TABLE: &[(&str, &str, &str)] = &[
     ),
     (
         "update.err.package",
-        "majelinux is installed by a package manager. Update it with the package manager.",
-        "majelinux установлен менеджером пакетов. Обнови его через менеджер пакетов.",
+        "Majelinux is installed by a package manager. Update it with the package manager.",
+        "Majelinux установлен менеджером пакетов. Обнови его через менеджер пакетов.",
     ),
     (
         "update.err.disabled",
@@ -544,7 +544,7 @@ static TABLE: &[(&str, &str, &str)] = &[
         "After launch, opens a window with live logs and closes the program. The window stays until you close it.",
         "После запуска открывает окно с логами в реальном времени, а программа закрывается. Окно остаётся, пока ты его не закроешь.",
     ),
-    ("debug.title", "majelinux — Debug", "majelinux — Отладка"),
+    ("debug.title", "Majelinux — Debug", "Majelinux — Отладка"),
     ("debug.stop_prefix", "Stop prefix", "Остановить префикс"),
     ("debug.back", "Back to launcher", "Вернуться в лаунчер"),
     ("debug.finished", "Finished", "Завершено"),
@@ -555,8 +555,8 @@ static TABLE: &[(&str, &str, &str)] = &[
     ),
     (
         "app.already_running",
-        "majelinux is already running.",
-        "majelinux уже запущен.",
+        "Majelinux is already running.",
+        "Majelinux уже запущен.",
     ),
     (
         "app.no_display",

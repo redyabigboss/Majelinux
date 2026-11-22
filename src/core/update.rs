@@ -8,10 +8,10 @@ use std::time::Duration;
 use crate::core::{Error, Result, net, paths, process, sha256};
 use crate::i18n::{t, tf};
 
-pub const BINARY_ASSET: &str = "majelinux-linux-x86_64";
+pub const BINARY_ASSET: &str = "Majelinux-linux-x86_64";
 pub const SUMS_ASSET: &str = "SHA256SUMS";
 pub const WAIT_PID_FLAG: &str = "--wait-pid";
-const API_URL: &str = "https://api.github.com/repos/redyabigboss/majelinux/releases/latest";
+const API_URL: &str = "https://api.github.com/repos/redyabigboss/Majelinux/releases/latest";
 const MIN_SIZE: u64 = 64 * 1024;
 const WAIT_LIMIT_MS: u64 = 30_000;
 
@@ -302,24 +302,24 @@ mod tests {
     fn finds_checksum_line() {
         let hash = "a".repeat(64);
         let sums = format!(
-            "{hash}  majelinux-linux-x86_64\n{} *other\n",
+            "{hash}  Majelinux-linux-x86_64\n{} *other\n",
             "b".repeat(64)
         );
-        assert_eq!(sum_for(&sums, "majelinux-linux-x86_64"), Some(hash));
+        assert_eq!(sum_for(&sums, "Majelinux-linux-x86_64"), Some(hash));
         assert_eq!(sum_for(&sums, "other"), Some("b".repeat(64)));
         assert_eq!(sum_for(&sums, "none"), None);
         assert_eq!(
-            sum_for("zz  majelinux-linux-x86_64", "majelinux-linux-x86_64"),
+            sum_for("zz  Majelinux-linux-x86_64", "Majelinux-linux-x86_64"),
             None
         );
     }
 
     #[test]
     fn package_roots_are_matched_as_components() {
-        assert!(package_managed(Path::new("/usr/bin/majelinux")));
-        assert!(!package_managed(Path::new("/usr/local/bin/majelinux")));
-        assert!(!package_managed(Path::new("/home/u/.local/bin/majelinux")));
-        assert!(!package_managed(Path::new("/usr-backup/majelinux")));
+        assert!(package_managed(Path::new("/usr/bin/Majelinux")));
+        assert!(!package_managed(Path::new("/usr/local/bin/Majelinux")));
+        assert!(!package_managed(Path::new("/home/u/.local/bin/Majelinux")));
+        assert!(!package_managed(Path::new("/usr-backup/Majelinux")));
     }
 
     #[test]

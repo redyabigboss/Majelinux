@@ -662,7 +662,7 @@ fn apply_patch(so: &Path) -> Result<()> {
     let mode = fs::metadata(so)?.permissions().mode();
     let mut patched = data;
     patched[at..at + NEW.len()].copy_from_slice(NEW);
-    let tmp = so.with_extension("so.majelinux.tmp");
+    let tmp = so.with_extension("so.Majelinux.tmp");
     fs::write(&tmp, &patched)?;
     fs::set_permissions(&tmp, fs::Permissions::from_mode(mode))?;
     fs::rename(&tmp, so)?;
@@ -708,7 +708,7 @@ pub fn ensure_patched(target: &Target) -> Result<()> {
 }
 
 fn dir_writable(dir: &Path) -> bool {
-    let probe = dir.join(".majelinux-write-test");
+    let probe = dir.join(".Majelinux-write-test");
     match fs::write(&probe, b"") {
         Ok(()) => {
             let _ = fs::remove_file(&probe);
@@ -743,7 +743,7 @@ mod tests {
 
     fn state_for(bytes: &[u8]) -> PatchState {
         let dir = std::env::temp_dir().join(format!(
-            "majelinux-state-{}-{}",
+            "Majelinux-state-{}-{}",
             std::process::id(),
             crate::core::util::unique_suffix()
         ));
@@ -787,7 +787,7 @@ mod tests {
     #[test]
     fn applies_patch_in_place() {
         let dir = std::env::temp_dir().join(format!(
-            "majelinux-apply-{}-{}",
+            "Majelinux-apply-{}-{}",
             std::process::id(),
             crate::core::util::unique_suffix()
         ));
@@ -805,7 +805,7 @@ mod tests {
     #[test]
     fn detects_experimental_by_version_file() {
         let dir = std::env::temp_dir().join(format!(
-            "majelinux-exp-{}-{}",
+            "Majelinux-exp-{}-{}",
             std::process::id(),
             crate::core::util::unique_suffix()
         ));
@@ -832,9 +832,9 @@ mod tests {
 
     #[test]
     fn recognises_own_copies() {
-        assert!(is_own_copy("proton-exp-majelinux"));
+        assert!(is_own_copy("proton-exp-Majelinux"));
         assert!(is_own_copy("proton-exp-mjlx"));
-        assert!(is_own_copy("proton---experimental-majelinux"));
+        assert!(is_own_copy("proton---experimental-Majelinux"));
         assert!(!is_own_copy("proton-experimental-bleeding"));
     }
 
@@ -848,7 +848,7 @@ mod tests {
     #[test]
     fn collects_nested_protons() {
         let root = std::env::temp_dir().join(format!(
-            "majelinux-collect-{}-{}",
+            "Majelinux-collect-{}-{}",
             std::process::id(),
             crate::core::util::unique_suffix()
         ));

@@ -1,4 +1,4 @@
-# majelinux
+# Majelinux
 
 **Нативный лаунчер Majestic RP для Grand Theft Auto V на Linux.**
 
@@ -7,8 +7,8 @@
 [![Лицензия: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
 [![Платформа: Linux](https://img.shields.io/badge/platform-Linux-informational.svg?style=flat-square&logo=linux&logoColor=white)](#требования)
 [![Rust 1.85+](https://img.shields.io/badge/rust-1.85%2B-orange.svg?style=flat-square&logo=rust)](https://www.rust-lang.org/)
-[![Последний коммит](https://img.shields.io/github/last-commit/redyabigboss/majelinux?style=flat-square)](https://github.com/redyabigboss/majelinux/commits/main)
-[![Релиз](https://img.shields.io/github/v/release/redyabigboss/majelinux?style=flat-square)](https://github.com/redyabigboss/majelinux/releases)
+[![Последний коммит](https://img.shields.io/github/last-commit/redyabigboss/Majelinux?style=flat-square)](https://github.com/redyabigboss/Majelinux/commits/main)
+[![Релиз](https://img.shields.io/github/v/release/redyabigboss/Majelinux?style=flat-square)](https://github.com/redyabigboss/Majelinux/releases)
 
 ---
 
@@ -30,7 +30,7 @@
 
 ## О проекте
 
-majelinux — небольшой нативный интерфейс для Windows-лаунчера Majestic RP на Linux. Программа подготавливает Proton-префикс Grand Theft Auto V, устанавливает компоненты, нужные оригинальному лаунчеру, применяет точечную правку совместимости Wine к выбранной сборке Proton и запускает оригинальный `Majestic Launcher.exe` внутри того же окружения, которое Steam использует для GTA V.
+Majelinux — небольшой нативный интерфейс для Windows-лаунчера Majestic RP на Linux. Программа подготавливает Proton-префикс Grand Theft Auto V, устанавливает компоненты, нужные оригинальному лаунчеру, применяет точечную правку совместимости Wine к выбранной сборке Proton и запускает оригинальный `Majestic Launcher.exe` внутри того же окружения, которое Steam использует для GTA V.
 
 Проект написан на Rust. Интерфейс GTK 3 вызывается напрямую через FFI. Сторонних Rust-зависимостей нет, программа собирается в один ELF-бинарник.
 
@@ -103,7 +103,7 @@ PROTON_ENABLE_WAYLAND=0 %command%
 PROTON_ENABLE_WAYLAND=0 DXVK_HUD=1 %command%
 ```
 
-Без `PROTON_ENABLE_WAYLAND=0` драйвер Wayland в Wine/Proton может сделать оригинальный лаунчер нестабильным или помешать его запуску. majelinux также сам добавляет эту переменную в `localconfig.vdf`, если её там нет, и передаёт её в окружение кнопки **Play**, но параметр в Steam всё равно рекомендуется задавать вручную: его читают Steam и другие инструменты.
+Без `PROTON_ENABLE_WAYLAND=0` драйвер Wayland в Wine/Proton может сделать оригинальный лаунчер нестабильным или помешать его запуску. Majelinux также сам добавляет эту переменную в `localconfig.vdf`, если её там нет, и передаёт её в окружение кнопки **Play**, но параметр в Steam всё равно рекомендуется задавать вручную: его читают Steam и другие инструменты.
 
 ## Требования
 
@@ -129,17 +129,17 @@ PROTON_ENABLE_WAYLAND=0 DXVK_HUD=1 %command%
 Скачайте последнюю версию и контрольные суммы:
 
 ```bash
-curl -LO https://github.com/redyabigboss/majelinux/releases/latest/download/majelinux-linux-x86_64
-curl -LO https://github.com/redyabigboss/majelinux/releases/latest/download/SHA256SUMS
+curl -LO https://github.com/redyabigboss/Majelinux/releases/latest/download/Majelinux-linux-x86_64
+curl -LO https://github.com/redyabigboss/Majelinux/releases/latest/download/SHA256SUMS
 sha256sum -c SHA256SUMS --ignore-missing
-chmod +x majelinux-linux-x86_64
-./majelinux-linux-x86_64
+chmod +x Majelinux-linux-x86_64
+./Majelinux-linux-x86_64
 ```
 
 Чтобы добавить программу в `PATH`:
 
 ```bash
-install -Dm755 majelinux-linux-x86_64 "$HOME/.local/bin/majelinux"
+install -Dm755 Majelinux-linux-x86_64 "$HOME/.local/bin/Majelinux"
 ```
 
 ### Из исходников
@@ -155,13 +155,13 @@ sudo pacman -S --needed rust gtk3 protontricks gcc curl
 Сборка и установка:
 
 ```bash
-git clone https://github.com/redyabigboss/majelinux.git
-cd majelinux
+git clone https://github.com/redyabigboss/Majelinux.git
+cd Majelinux
 cargo build --release
 ./packaging/install.sh
 ```
 
-`packaging/install.sh` устанавливает бинарник в `~/.local/bin/majelinux`, ярлык в `~/.local/share/applications/majelinux.desktop` и иконки в тему hicolor. Удалить эти файлы можно так:
+`packaging/install.sh` устанавливает бинарник в `~/.local/bin/Majelinux`, ярлык в `~/.local/share/applications/Majelinux.desktop` и иконки в тему hicolor. Удалить эти файлы можно так:
 
 ```bash
 ./packaging/uninstall.sh
@@ -172,12 +172,12 @@ cargo build --release
 ### Первый запуск
 
 1. Запустите Steam и убедитесь, что установлены Grand Theft Auto V Legacy и Proton Experimental.
-2. Запустите majelinux из меню приложений или командой `majelinux`.
+2. Запустите Majelinux из меню приложений или командой `Majelinux`.
 3. Откройте **Установка** и нажмите **Установить** либо нажмите **Играть** на главной странице. Если чего-то не хватает, **Играть** запустит установку автоматически.
 4. В **Настройках** выберите нужную сборку Proton, если автоматический выбор не подходит.
 5. После завершения установки нажмите **Играть**.
 
-Для смены Proton нужно закрыть Steam. majelinux сам закрывает Steam, записывает сопоставление и запускает его снова.
+Для смены Proton нужно закрыть Steam. Majelinux сам закрывает Steam, записывает сопоставление и запускает его снова.
 
 ## Использование
 
@@ -215,7 +215,7 @@ cargo build --release
 
 ### Очистка лаунчера
 
-После того как GTA V проработает заданное время, majelinux может снизить нагрузку от оригинального Majestic Launcher. По умолчанию используется режим `suspend` через 60 секунд.
+После того как GTA V проработает заданное время, Majelinux может снизить нагрузку от оригинального Majestic Launcher. По умолчанию используется режим `suspend` через 60 секунд.
 
 | Режим | Поведение |
 | --- | --- |
@@ -224,7 +224,7 @@ cargo build --release
 | `all` | Завершает все процессы Majestic Launcher после задержки. Это может завершить Wine-сессию и разорвать соединение с игрой. После обнаруженного сбоя режим отключается защитным файлом. |
 | `off` | Очистка не выполняется. |
 
-Настройки хранятся в `~/.config/majelinux/config.ini`:
+Настройки хранятся в `~/.config/Majelinux/config.ini`:
 
 ```ini
 [General]
@@ -242,9 +242,9 @@ protontricks_args=
 ### Командная строка
 
 ```text
-majelinux --version
-majelinux --trim-launcher <off|renderers|all|suspend> <задержка-в-секундах>
-majelinux --wait-pid <pid>
+Majelinux --version
+Majelinux --trim-launcher <off|renderers|all|suspend> <задержка-в-секундах>
+Majelinux --wait-pid <pid>
 ```
 
 `--trim-launcher` используется внутренним процессом очистки. `--wait-pid` нужен самообновлению, чтобы новый бинарник дождался завершения старого процесса.
@@ -263,11 +263,11 @@ majelinux --wait-pid <pid>
 
 | Путь | Содержимое |
 | --- | --- |
-| `~/.config/majelinux/config.ini` | Пользовательские настройки |
-| `~/.local/state/majelinux/` | Состояние, файл блокировки, подготовка обновлений, резервные копии Proton |
-| `~/.local/state/majelinux/logs/` | Логи установки, запуска, отладки и очистки |
-| `~/.local/state/majelinux/proton-backup/` | Резервные копии изменённых `ntdll.so` |
-| `~/.cache/majelinux/` | Скачанный установщик и шрифт эмодзи |
+| `~/.config/Majelinux/config.ini` | Пользовательские настройки |
+| `~/.local/state/Majelinux/` | Состояние, файл блокировки, подготовка обновлений, резервные копии Proton |
+| `~/.local/state/Majelinux/logs/` | Логи установки, запуска, отладки и очистки |
+| `~/.local/state/Majelinux/proton-backup/` | Резервные копии изменённых `ntdll.so` |
+| `~/.cache/Majelinux/` | Скачанный установщик и шрифт эмодзи |
 | `steamapps/compatdata/271590/pfx` | Proton-префикс GTA V |
 | `steamapps/common/Grand Theft Auto V` | Каталог игры GTA V |
 
@@ -290,12 +290,12 @@ majelinux --wait-pid <pid>
 11. После появления процесса игры запускает наблюдатель очистки лаунчера.
 12. В режиме отладки следит за новыми процессами Wine в логе, дочитывает вывод лаунчера и поддерживает отзывчивость интерфейса.
 
-Оригинальный лаунчер не заменяется. majelinux запускает его в том же Proton-префиксе, который Steam использует для GTA V, поэтому игра, лаунчер и клиент Majestic RP работают в одном окружении Wine.
+Оригинальный лаунчер не заменяется. Majelinux запускает его в том же Proton-префиксе, который Steam использует для GTA V, поэтому игра, лаунчер и клиент Majestic RP работают в одном окружении Wine.
 
 ### Структура проекта
 
 ```text
-majelinux/
+Majelinux/
 ├── Cargo.toml                  Пакет Rust и профиль релиза
 ├── Cargo.lock                  Зафиксированные зависимости (сторонних крейтов нет)
 ├── LICENSE                     Лицензия MIT
@@ -311,7 +311,7 @@ majelinux/
 │   ├── install.sh              Установка в домашний каталог
 │   ├── uninstall.sh            Удаление
 │   ├── release.sh              Сборка архива и контрольных сумм
-│   └── majelinux.desktop       Ярлык рабочего стола
+│   └── Majelinux.desktop       Ярлык рабочего стола
 └── src/
     ├── main.rs                 Точка входа и разбор аргументов
     ├── ffi.rs                  Привязки GTK 3, GLib, GObject, Cairo и libc
@@ -342,7 +342,7 @@ majelinux/
 
 ### Патч Proton
 
-Патч меняет одну последовательность инструкций в `ntdll.so`. Она восстанавливает регистр Windows `RCX` при возврате из системного вызова, чего ожидает оригинальный лаунчер. majelinux:
+Патч меняет одну последовательность инструкций в `ntdll.so`. Она восстанавливает регистр Windows `RCX` при возврате из системного вызова, чего ожидает оригинальный лаунчер. Majelinux:
 
 - читает выбранную сборку Proton;
 - считает вхождения точной последовательности;
@@ -355,9 +355,9 @@ majelinux/
 
 ### Самообновление
 
-При запуске majelinux запрашивает у API GitHub Releases последний релиз `redyabigboss/majelinux`. Если версия новее, обновление:
+При запуске Majelinux запрашивает у API GitHub Releases последний релиз `redyabigboss/Majelinux`. Если версия новее, обновление:
 
-1. скачивает `SHA256SUMS` и `majelinux-linux-x86_64`;
+1. скачивает `SHA256SUMS` и `Majelinux-linux-x86_64`;
 2. проверяет контрольную сумму SHA-256;
 3. проверяет, что файл является ELF-бинарником и запускается с `--version`;
 4. копирует его рядом с текущим исполняемым файлом, сохраняет предыдущий бинарник в каталог состояния и атомарно заменяет программу;
@@ -367,33 +367,33 @@ majelinux/
 
 ### Логи
 
-Каждый запуск создаёт лог с меткой времени в `~/.local/state/majelinux/logs/`. Страницы **Установка** и **Отладка** показывают лог в реальном времени. Старые логи очищаются при старте. Очистка лаунчера пишет свои решения в `trim.log`.
+Каждый запуск создаёт лог с меткой времени в `~/.local/state/Majelinux/logs/`. Страницы **Установка** и **Отладка** показывают лог в реальном времени. Старые логи очищаются при старте. Очистка лаунчера пишет свои решения в `trim.log`.
 
 ## Решение проблем
 
 | Проблема | Решение |
 | --- | --- |
-| `No graphical session found` | Запускайте majelinux в графической сессии с корректным `DISPLAY` или `WAYLAND_DISPLAY`. |
-| `majelinux is already running` | Закройте другой экземпляр. Блокировка снимается автоматически при завершении процесса. |
+| `No graphical session found` | Запускайте Majelinux в графической сессии с корректным `DISPLAY` или `WAYLAND_DISPLAY`. |
+| `Majelinux is already running` | Закройте другой экземпляр. Блокировка снимается автоматически при завершении процесса. |
 | `GTA V not found` | Установите Steam-версию Legacy и запустите игру один раз из Steam. |
 | `Prefix 271590 not found` | Запустите GTA V один раз из Steam, чтобы создался Proton-префикс. |
 | `Launcher not found in the prefix` | Снова откройте **Установку** и выполните шаг **Лаунчер Majestic**. |
 | `Steam did not close` | Закройте Steam вручную и нажмите **Играть** ещё раз. Сопоставление Proton записывается только при закрытом Steam. |
 | `Pattern found N times ... nothing was changed` | Выбранная сборка Proton несовместима с патчем. Используйте Proton Experimental. |
 | `The release has no checksum for this build` | Релиз неполный или вместо файла пришла HTML-страница. Повторите позже. |
-| `The downloaded file does not match its checksum` | Удалите `~/.local/state/majelinux/update/` и попробуйте снова. |
-| `majelinux is installed by a package manager` | Обновляйте программу через пакетный менеджер, а не встроенным обновлением. |
+| `The downloaded file does not match its checksum` | Удалите `~/.local/state/Majelinux/update/` и попробуйте снова. |
+| `Majelinux is installed by a package manager` | Обновляйте программу через пакетный менеджер, а не встроенным обновлением. |
 | Лаунчер или игра падают при запуске | Задайте `PROTON_ENABLE_WAYLAND=0 %command%`, выберите Proton Experimental и посмотрите последний лог. |
 | После **Играть** нет окна игры | Проверьте лог запуска, убедитесь, что оригинальный лаунчер установлен, и завершён ли шаг обработчика `steam://`. |
 | В лаунчере нет эмодзи | Шаг с эмодзи необязательный; повторите его на странице **Установка**. |
-| Лаунчер остаётся на экране во время игры | Проверьте `~/.local/state/majelinux/logs/trim.log`; задержка по умолчанию — 60 секунд, режим — `suspend`. |
+| Лаунчер остаётся на экране во время игры | Проверьте `~/.local/state/Majelinux/logs/trim.log`; задержка по умолчанию — 60 секунд, режим — `suspend`. |
 | Проверка обновлений не работает при старте | Автоматическая проверка завершается молча; откройте **О программе** и запустите проверку вручную, чтобы увидеть ошибку. |
 
 Подробный лог включает **Режим отладки** на странице **Дополнительно**. Окно отладки показывает полный вывод и останавливает префикс при закрытии.
 
 ## Частые вопросы
 
-**majelinux изменяет GTA V?**
+**Majelinux изменяет GTA V?**
 Нет. Программа работает с Proton-префиксом, выбранной сборкой Proton, настройками Steam и оригинальным Majestic Launcher. Файлы игры не изменяются.
 
 **Работает ли это с GTA V Enhanced?**
@@ -409,7 +409,7 @@ majelinux/
 Селектор умеет находить и пробовать другие сборки, но официально поддерживается только Proton Experimental. Остальные сборки считайте экспериментальными.
 
 **Почему при смене Proton закрывается Steam?**
-Steam держит `config.vdf` открытым и может перезаписать изменения. majelinux закрывает Steam, записывает сопоставление, проверяет его и запускает Steam снова.
+Steam держит `config.vdf` открытым и может перезаписать изменения. Majelinux закрывает Steam, записывает сопоставление, проверяет его и запускает Steam снова.
 
 **Почему оригинальный лаунчер приостанавливается, а не закрывается?**
 Закрытие лаунчера может разрушить Wine-сессию и разорвать соединение с игрой. Приостановка останавливает работу CPU и GPU, сохраняя сессию. После выхода из игры лаунчер завершается, и ресурсы освобождаются.
@@ -418,7 +418,7 @@ Steam держит `config.vdf` открытым и может перезапи�
 Нет. Программе нужна графическая сессия. Аргументы командной строки ограничены выводом версии и внутренними служебными режимами.
 
 **Как удалить программу?**
-Запустите `./packaging/uninstall.sh`, затем удалите `~/.config/majelinux`, `~/.local/state/majelinux` и `~/.cache/majelinux`, если нужно стереть настройки, логи и кэш загрузок.
+Запустите `./packaging/uninstall.sh`, затем удалите `~/.config/Majelinux`, `~/.local/state/Majelinux` и `~/.cache/Majelinux`, если нужно стереть настройки, логи и кэш загрузок.
 
 ## Участие в проекте
 
@@ -442,6 +442,6 @@ cargo build --release
 
 ## Отказ от ответственности
 
-majelinux — неофициальный общественный проект. Он не связан с Rockstar Games, Take-Two Interactive, Valve Corporation, Majestic RP и разработчиками Majestic Launcher. Grand Theft Auto V, Rockstar Games, Take-Two, Steam, Proton и Majestic RP являются товарными знаками соответствующих владельцев. Для использования нужна легально купленная копия Grand Theft Auto V.
+Majelinux — неофициальный общественный проект. Он не связан с Rockstar Games, Take-Two Interactive, Valve Corporation, Majestic RP и разработчиками Majestic Launcher. Grand Theft Auto V, Rockstar Games, Take-Two, Steam, Proton и Majestic RP являются товарными знаками соответствующих владельцев. Для использования нужна легально купленная копия Grand Theft Auto V.
 
 Используйте программу на свой риск. Авторы не несут ответственности за блокировки, потерю данных, ограничения аккаунта или ущерб, вызванный сторонним программным обеспечением или правилами сервера.

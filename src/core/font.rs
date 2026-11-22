@@ -295,7 +295,7 @@ pub fn rename_font(src: &Path, dst: &Path) -> Result<()> {
     if let Some(parent) = dst.parent() {
         fs::create_dir_all(parent)?;
     }
-    let tmp = dst.with_extension("majelinux.tmp");
+    let tmp = dst.with_extension("Majelinux.tmp");
     fs::write(&tmp, &renamed)?;
     if let Err(error) = fs::rename(&tmp, dst) {
         let _ = fs::remove_file(&tmp);
@@ -432,7 +432,7 @@ mod tests {
     #[test]
     fn writes_atomically() {
         let dir = std::env::temp_dir().join(format!(
-            "majelinux-font-{}-{}",
+            "Majelinux-font-{}-{}",
             std::process::id(),
             crate::core::util::unique_suffix()
         ));

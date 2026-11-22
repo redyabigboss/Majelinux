@@ -1,13 +1,13 @@
 [package]
-name = "majelinux"
+name = "Majelinux"
 version = "1.0.0"
 edition = "2024"
-description = "majelinux — native Rust launcher for Majestic RP on Linux (GTK 3, any Proton)"
+description = "Majelinux — native Rust launcher for Majestic RP on Linux (GTK 3, any Proton)"
 license = "MIT"
-repository = "https://github.com/redyabigboss/majelinux"
+repository = "https://github.com/redyabigboss/Majelinux"
 
 [[bin]]
-name = "majelinux"
+name = "Majelinux"
 path = "src/main.rs"
 
 [profile.release]

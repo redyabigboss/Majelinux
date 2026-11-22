@@ -120,7 +120,7 @@ mod tests {
 
     #[test]
     fn reads_qsettings_ini() {
-        let dir = std::env::temp_dir().join(format!("majelinux-ini-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("Majelinux-ini-{}", std::process::id()));
         let _ = fs::create_dir_all(&dir);
         let path = dir.join("config.ini");
         fs::write(

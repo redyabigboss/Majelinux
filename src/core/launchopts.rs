@@ -102,12 +102,12 @@ fn write(path: &Path) -> Result<()> {
     let mut updated = text.clone();
     updated.replace_range(start..end, &replacement);
     vdf::parse(&updated)?;
-    let backup = path.with_file_name("localconfig.vdf.majelinux.bak");
+    let backup = path.with_file_name("localconfig.vdf.Majelinux.bak");
     if !backup.exists() {
         fs::copy(path, &backup)?;
     }
     let mode = fs::metadata(path).ok().map(|meta| meta.permissions());
-    let tmp = path.with_file_name("localconfig.vdf.majelinux.tmp");
+    let tmp = path.with_file_name("localconfig.vdf.Majelinux.tmp");
     let result = (|| -> Result<()> {
         fs::write(&tmp, updated.as_bytes())?;
         if let Some(mode) = mode {
@@ -156,7 +156,7 @@ mod tests {
 
     #[test]
     fn adds_missing_launch_options() {
-        let dir = std::env::temp_dir().join(format!("majelinux-opts-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("Majelinux-opts-{}", std::process::id()));
         let _ = fs::create_dir_all(&dir);
         let path = dir.join("localconfig.vdf");
         let text = "\"UserLocalConfigStore\"\n{\n\t\"Software\"\n\t{\n\t\t\"Valve\"\n\t\t{\n\t\t\t\"Steam\"\n\t\t\t{\n\t\t\t\t\"apps\"\n\t\t\t\t{\n\t\t\t\t\t\"271590\"\n\t\t\t\t\t{\n\t\t\t\t\t\t\"Playtime\"\t\t\"1\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n";
@@ -177,7 +177,7 @@ mod tests {
 
     #[test]
     fn keeps_existing_options() {
-        let dir = std::env::temp_dir().join(format!("majelinux-opts2-{}", std::process::id()));
+        let dir = std::env::temp_dir().join(format!("Majelinux-opts2-{}", std::process::id()));
         let _ = fs::create_dir_all(&dir);
         let path = dir.join("localconfig.vdf");
         let text = "\"UserLocalConfigStore\"\n{\n\t\"Software\"\n\t{\n\t\t\"Valve\"\n\t\t{\n\t\t\t\"Steam\"\n\t\t\t{\n\t\t\t\t\"apps\"\n\t\t\t\t{\n\t\t\t\t\t\"271590\"\n\t\t\t\t\t{\n\t\t\t\t\t\t\"LaunchOptions\"\t\t\"gamemoderun %command%\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n";

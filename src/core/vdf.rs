@@ -361,7 +361,7 @@ pub fn set_compat_tool(appid: u32, name: &str) -> Result<()> {
     set_compat_tool_at(
         &paths::config_vdf(),
         &paths::backup_vdf(),
-        &paths::config_vdf().with_file_name("config.vdf.majelinux.tmp"),
+        &paths::config_vdf().with_file_name("config.vdf.Majelinux.tmp"),
         appid,
         name,
     )
@@ -398,7 +398,7 @@ mod tests {
     impl Temp {
         fn new(contents: &str) -> Self {
             let dir = std::env::temp_dir().join(format!(
-                "majelinux-vdf-{}-{}",
+                "Majelinux-vdf-{}-{}",
                 std::process::id(),
                 crate::core::util::unique_suffix()
             ));
@@ -406,8 +406,8 @@ mod tests {
             let config = dir.join("config.vdf");
             fs::write(&config, contents).unwrap();
             Self {
-                backup: dir.join("config.vdf.majelinux.bak"),
-                tmp: dir.join("config.vdf.majelinux.tmp"),
+                backup: dir.join("config.vdf.Majelinux.bak"),
+                tmp: dir.join("config.vdf.Majelinux.tmp"),
                 config,
                 dir,
             }

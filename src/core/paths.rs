@@ -5,15 +5,15 @@ use crate::core::steam as discovery;
 pub const APP_ID: u32 = 271590;
 pub const APP_ID_STR: &str = "271590";
 pub const DEFAULT_ARGS: &str = "-disable-gpu";
-pub const APP_NAME: &str = "majelinux";
+pub const APP_NAME: &str = "Majelinux";
 pub const APP_VERSION: &str = env!("CARGO_PKG_VERSION");
-pub const REPO_URL: &str = "https://github.com/redyabigboss/majelinux";
+pub const REPO_URL: &str = "https://github.com/redyabigboss/Majelinux";
 pub const GAME_DIR: &str = "Grand Theft Auto V";
 pub const STOCK_FOLDER: &str = "Proton - Experimental";
 
 pub const PATCHED_NAME: &str = "Proton-Exp-Majelinux";
 pub const LEGACY_PATCHED_NAME: &str = "Proton-Exp-MJLX";
-pub const DISPLAY_SUFFIX: &str = " (majelinux RCX fix)";
+pub const DISPLAY_SUFFIX: &str = " (Majelinux RCX fix)";
 pub const DEFAULT_LABEL: &str = "Proton Experimental";
 
 pub const SETUP_URL: &str = "https://cdn.majestic-files.net/launcher/cis/MajesticLauncherSetup.exe";
@@ -120,7 +120,7 @@ pub fn config_vdf() -> PathBuf {
 }
 
 pub fn backup_vdf() -> PathBuf {
-    steam().join("config/config.vdf.majelinux.bak")
+    steam().join("config/config.vdf.Majelinux.bak")
 }
 
 pub fn launcher_base() -> PathBuf {

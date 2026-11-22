@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Application
-Name=majelinux
+Name=Majelinux
 Comment=Native Rust launcher for Majestic RP on Linux
-Exec=majelinux
-Icon=majelinux
+Exec=Majelinux
+Icon=Majelinux
 Terminal=false
 Categories=Game;
-StartupWMClass=majelinux
+StartupWMClass=Majelinux

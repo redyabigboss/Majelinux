@@ -206,7 +206,6 @@ struct GeneralWidgets {
     page: W,
     play: W,
     play_label: W,
-    logs: W,
     note: W,
     sub: W,
 }
@@ -726,10 +725,7 @@ fn build_general() -> GeneralWidgets {
         let play_label = label(&t("btn.play"), "");
         pack(play_box, play_label, false);
         gtk_container_add(play, play_box);
-        let logs = button_label(&t("btn.open_logs"));
-        style(logs, "text-button");
         pack(actions, play, false);
-        pack(actions, logs, false);
 
         pack(hero, eyebrow, false);
         pack(hero, title, false);
@@ -743,7 +739,6 @@ fn build_general() -> GeneralWidgets {
             page,
             play,
             play_label,
-            logs,
             note,
             sub,
         }
@@ -1154,12 +1149,6 @@ impl App {
                 self.general.play,
                 "clicked",
                 play_click as *const std::ffi::c_void,
-                data,
-            );
-            connect(
-                self.general.logs,
-                "clicked",
-                logs_click as *const std::ffi::c_void,
                 data,
             );
             connect(
@@ -1681,7 +1670,6 @@ impl App {
             {
                 gtk_button_set_label(self.nav[index], c(&t(key)).as_ptr());
             }
-            gtk_button_set_label(self.general.logs, c(&t("btn.open_logs")).as_ptr());
             set_text(self.installer.title, &t("nav.install"));
             set_text(self.installer.desc, &t("install.desc"));
             gtk_button_set_label(self.installer.copy_log, c(&t("btn.copy_log")).as_ptr());

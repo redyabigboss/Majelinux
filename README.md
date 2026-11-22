@@ -185,7 +185,7 @@ Changing the Proton mapping requires Steam to be closed. majelinux closes Steam,
 
 | Page | Purpose |
 | --- | --- |
-| **General** | Starts the game, shows the current state, and opens the log folder |
+| **General** | Starts the game and shows the current state |
 | **Installation** | Runs the seven installation steps, shows package requirements and live logs |
 | **Settings** | Interface language, Proton selection, custom Proton folders, launcher arguments |
 | **Additionally** | Debug mode with a live log window |

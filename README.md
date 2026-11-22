@@ -12,6 +12,22 @@
 
 ---
 
+## Contents
+
+- [About](#about)
+- [Screenshots](#screenshots)
+- [Compatibility](#compatibility)
+- [Required Steam launch option](#required-steam-launch-option)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [How it works](#how-it-works)
+- [Troubleshooting](#troubleshooting)
+- [FAQ](#faq)
+- [Contributing](#contributing)
+- [License](#license)
+- [Disclaimer](#disclaimer)
+
 ## About
 
 majelinux is a small, native Linux front-end for the Windows Majestic RP launcher. It prepares the Grand Theft Auto V Proton prefix, installs the components the original launcher needs, applies a narrow Wine compatibility patch to the selected Proton build, and starts the original `Majestic Launcher.exe` inside the GTA V compatibility environment.
@@ -414,6 +430,8 @@ cargo build --release
 ```
 
 Keep the project free of third-party Rust crates, keep the GTK 3 interface working on both X11 and Wayland, and do not add code that modifies GTA V game files. Describe the tested Proton build and distribution in the pull request.
+
+Maintained by [@redyabigboss](https://github.com/redyabigboss).
 
 ## License
 

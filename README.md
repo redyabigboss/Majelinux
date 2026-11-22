@@ -50,16 +50,16 @@ The GTA V game files are not modified.
 ## Screenshots
 
 <p align="center">
-  <img src="docs/screenshots/v2/general.png" alt="General page" width="420">
-  <img src="docs/screenshots/v2/installation.png" alt="Installation page" width="420">
+  <img src="docs/screenshots/general.png" alt="General page" width="420">
+  <img src="docs/screenshots/installation.png" alt="Installation page" width="420">
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/v2/settings.png" alt="Settings page" width="420">
+  <img src="docs/screenshots/settings.png" alt="Settings page" width="420">
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/v2/about.png" alt="About page" width="420">
+  <img src="docs/screenshots/about.png" alt="About page" width="420">
 </p>
 
 ## Compatibility

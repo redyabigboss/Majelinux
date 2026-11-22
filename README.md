@@ -42,6 +42,10 @@ The GTA V game files are not modified.
   <img src="docs/screenshots/settings.png" alt="Settings page" width="420">
 </p>
 
+<p align="center">
+  <img src="docs/screenshots/about.png" alt="About page" width="420">
+</p>
+
 ## Compatibility
 
 > [!IMPORTANT]

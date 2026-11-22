@@ -276,8 +276,8 @@ static TABLE: &[(&str, &str, &str)] = &[
     ("about.version", "Version {version}", "Версия {version}"),
     (
         "about.tagline",
-        "Native Rust Launcher for Majestic RP",
-        "Нативный Лаунчер Majestic RP на Rust",
+        "Native Rust launcher for Majestic RP on Linux",
+        "Нативный Rust-лаунчер Majestic RP на Linux",
     ),
     ("about.project", "Project", "Проект"),
     ("about.github", "Open on GitHub", "Открыть на GitHub"),

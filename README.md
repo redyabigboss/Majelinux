@@ -36,7 +36,7 @@ The program is written in Rust and draws its GTK 3 interface through direct FFI 
 
 What it does:
 
-- Detects Proton builds in Steam libraries, `compatibilitytools.d`, Flatpak Steam, Snap Steam and system folders, and accepts custom Proton folders.
+- Detects Proton builds in Steam libraries, `compatibilitytools.d`, Flatpak Steam, Snap Steam, system folders, Heroic and Lutris, and accepts custom Proton folders.
 - Installs the original Majestic Launcher, PowerShell, the `steam://` handler, an emoji font and a Russian keyboard-layout fix inside the GTA V prefix.
 - Applies an in-place `ntdll.so` compatibility patch to the selected Proton build only when the expected code sequence is present. The original file is backed up first.
 - Writes the Steam compatibility-tool mapping for app `271590`, adds `PROTON_ENABLE_WAYLAND=0` to the Steam launch options when it is missing, and starts Steam when needed.
@@ -254,6 +254,7 @@ majelinux --wait-pid <pid>
 | Variable | Effect |
 | --- | --- |
 | `MAJELINUX_NO_SELF_UPDATE` | Disables the built-in updater when set to a non-empty value other than `0` |
+| `STEAM_EXTRA_COMPAT_TOOLS_PATHS` | Adds directories to Proton discovery |
 | `XDG_CONFIG_HOME` | Changes the configuration directory |
 | `XDG_STATE_HOME` | Changes the state and log directory |
 | `XDG_CACHE_HOME` | Changes the download cache directory |
@@ -287,7 +288,7 @@ majelinux --wait-pid <pid>
 9. Create the `S:` drive link to the Steam library.
 10. Start the launcher with `protontricks-launch --appid 271590 <launcher> <arguments>`, using the GTA V compatibility data path, Steam client path and app IDs.
 11. Start the launcher cleanup watcher after the game process appears.
-12. Watch new Wine processes in the debug log, tail the launcher log, and keep the interface responsive.
+12. In debug mode, watch new Wine processes in the log, tail the launcher output, and keep the interface responsive.
 
 The original launcher is not replaced. majelinux starts it inside the same Proton prefix that Steam uses for GTA V, so the game, the launcher and the Majestic RP client share one Wine environment.
 

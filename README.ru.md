@@ -1,6 +1,6 @@
 # Majelinux
 
-**Нативный лаунчер Majestic RP для Grand Theft Auto V на Linux.**
+**Нативный Rust-лаунчер Majestic RP на Linux.**
 
 [English](README.md) · [Русский](README.ru.md)
 
